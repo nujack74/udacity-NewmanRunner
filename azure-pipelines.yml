@@ -6,10 +6,10 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+#pool:
+#  vmImage: ubuntu-latest
 
-steps:
+#steps:
 #- script: echo Hello, world!
 #  displayName: 'Run a one-line script'
 
@@ -18,8 +18,10 @@ steps:
 #    echo See https://aka.ms/yaml
 #  displayName: 'Run a multi-line script'
 name: Azure Pipelines
+
 variables:
   python.version: '3.7.6'
+  
 stages:
 - stage: Build
   jobs:
