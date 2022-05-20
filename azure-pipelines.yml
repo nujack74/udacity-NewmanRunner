@@ -20,14 +20,19 @@ trigger:
 name: Azure Pipelines
 
 variables:
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+  # Python Version
   python.version: '3.7.6'
   
 stages:
 - stage: Build
+  displayName: Build stage
   jobs:
   - job: Build
     pool:
-      name: Hosted Ubuntu 1604
+      vmImage: $(vmImageName)
+      # name: Hosted Ubuntu 1604
     steps:
     - task: CmdLine@2
       displayName: Install Newman
